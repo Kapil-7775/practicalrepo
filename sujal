@@ -1,0 +1,21 @@
+mkdir my-project
+cd my-project
+echo "# My Project" > README.md
+Initialize a git repository:
+
+git init
+git add .
+git commit -m "Initial commit: add README"
+git remote add origin https://github.com/<your-username>/my-project.git
+git branch -M main
+git push -u origin main
+git checkout -b feature-update-readme
+echo "Some new content" >> README.md
+git add README.md
+git commit -m "Add more content to README"
+git push -u origin feature-update-readme
+git checkout main
+git pull
+git merge feature-update-readme -m "Merge feature-update-readme into main"
+git push
+git log --reverse --oneline
